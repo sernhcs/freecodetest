@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/courses', [App\Http\Controllers\CoursesController::class, 'index']);
+Route::get('/courses/{id}', [App\Http\Controllers\CoursesController::class, 'getCourse']);
+Route::get('/speciality/{id}', [App\Http\Controllers\SpecialityController::class, 'getSpeciality']);

@@ -11,6 +11,6 @@ class Speciality extends Model
 
     //    relacion muchos a muchos
     public function courses(){
-        return $this->belongsToMany('App\Models\Courses');
+        return $this->belongsToMany('App\Models\Courses','course_speciality','speciality_id','course_id');
     }
 }

@@ -17,4 +17,16 @@ class CoursesController extends Controller
             "data" => $courses
         ]);
     }
+
+    public function getCourse($id)
+    {
+        $courses = Courses::where('id',$id )
+            ->with('lessons','specialities')
+            ->first();
+        return response()->json([
+            "success" => true,
+            "message" => "Curso",
+            "data" => $courses
+        ]);
+    }
 }
